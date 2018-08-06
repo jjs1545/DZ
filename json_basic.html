@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JSON Basic</title>
+</head>
+<body>
+    <script>
+        // Array and Object Definition
+        var arr = ["Jusin", 25, "Seoul Univ of Korea", "Computer Science"];
+        var obj = {"NAME":"Jusin", "AGE":25, "UNIVERSITY":"Seoul Univ of Korea", "MAJOR":"Computer Science"}
+
+        // Array and Object Value Check
+        document.write("<b>Normal String Array:</b>", arr, "<br/>");
+        document.write("<br/><b>Normal Object</b><br/>");
+
+        for(var objVarName in obj) {
+            document.write(objVarName, ":" , obj[objVarName], "<br/>");
+        }
+
+
+        /* ************************************* */
+
+        // JSON Definition
+        var json = '{"NAME":"Jusin", "AGE":25, "UNIVERSITY":"Seokyeong Univ of Korea", "MAJOR":"Computer Science", "JOB":"Programmer", "COMPANY":"SAMSUNG SDS"}';
+
+        // JSON Parse and Check
+        var jsonObj =  JSON.parse(json);
+        document.write("<br/><b>JSON Object</b><br/>");
+        
+        for(var objVarName in jsonObj) {
+            document.write(objVarName, ":" , jsonObj[objVarName], "<br/>");
+        }
+
+        // JSON Object to JSON String
+        var jsonStr = JSON.stringify(jsonObj);
+        document.write("<br/><b>JSON String Format:</b>", jsonStr, "<br/>");
+
+    </script>
+</body>
+</html>
