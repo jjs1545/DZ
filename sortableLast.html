@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Sortable - Default functionality</title>
+  <!-- <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css"> -->
+  <style>
+  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
+  #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
+  #sortable li span { position: absolute; margin-left: -1.3em; }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+    $( function() {
+        $( "#sortable" ).sortable();
+        //$( "#sortable" ).disableSelection();
+    } );
+
+
+    //$(document).ready(function(){
+            //$(".ui-state-default").on('click',function(){
+              $(document).on('click', '.ui-state-default',function(){
+                var x = $(this).offset();
+                alert("Top: " + x.top + " Left: " + x.left);
+              });
+            //});
+       // });
+
+
+    $(document).on("click","#create",function() {
+      var x = Number(prompt("몇 줄?")); //prompt를 활용하여 값을 받는다.
+      var y = Number(prompt("몇 칸?"));
+      var count=0;
+      var temp="";
+
+      temp+='<div class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>'
+        temp+='<div>';
+        temp+='<table border="1">';
+        for(i=0;i<x;i++){
+            temp+='<tr>';
+            for(j=0;j<y;j++){
+            temp+='<td>&nbsp;'+count+'</td>';
+            }
+            temp+='</tr>';
+        }
+        temp+='</table>';
+        temp+='</div>';
+      temp+='</div>';
+      $("#sortable").append(temp);
+
+      //$("#div").html(temp);
+    });
+  </script>
+</head>
+<body>
+<button id="create">표 만들기</button>
+
+<div id="sortable">
+  <div class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+    <table border="1">
+            <tr>
+              <th>구분</th>
+              <th>열1</th>
+              <th>열2</th>
+              <th>열3</th>
+              <th>열4</th>
+              <th>열5</th>
+            </tr>
+            <tr>
+              <td>행1</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>행2</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>행3</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>행4</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+        </table>
+  </div>
+  <div class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+    <table border="2">
+            <tr>
+              <th>구분2</th>
+              <th>열1</th>
+              <th>열2</th>
+              <th>열3</th>
+              <th>열4</th>
+              <th>열5</th>
+            </tr>
+            <tr>
+              <td>행1</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>행2</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>행3</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>행4</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+        </table>
+  </div>
+  <div class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+    <table border="3">
+            <tr>
+              <th>구분3</th>
+              <th>열1</th>
+              <th>열2</th>
+              <th>열3</th>
+              <th>열4</th>
+              <th>열5</th>
+            </tr>
+            <tr>
+              <td>행1</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>행2</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>행3</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>행4</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+        </table>
+  </div>
+  <div class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+    <table border="4">
+            <tr>
+              <th>구분</th>
+              <th>열1</th>
+              <th>열2</th>
+              <th>열3</th>
+              <th>열4</th>
+              <th>열5</th>
+            </tr>
+            <tr>
+              <td>행1</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>행2</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>행3</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>행4</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+        </table>
+  </div>
+  <div class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>
+    <table border="5">
+            <tr>
+              <th>구분</th>
+              <th>열1</th>
+              <th>열2</th>
+              <th>열3</th>
+              <th>열4</th>
+              <th>열5</th>
+            </tr>
+            <tr>
+              <td>행1</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>행2</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>행3</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+            <tr>
+              <td>행4</td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+              <td> </td>
+            </tr>
+        </table>
+  </div>
+  <div class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</div>
+  <div class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</div>
+</div>
+ 
+ 
+</body>
+</html>
+
+
+
